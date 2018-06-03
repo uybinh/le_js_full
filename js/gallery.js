@@ -16,3 +16,6 @@ function activateGallery() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  activateGallery();
+});
