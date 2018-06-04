@@ -5,15 +5,22 @@ function activateGallery() {
   let mainImageDescription = document.querySelector("#gallery-info :last-child");
 
   thumbnails.forEach(function(thumbnail){
+    let largeVersion = new Image();
+    largeVersion.src = thumbnail.dataset.largeVersion;
+
     thumbnail.addEventListener("click", function(event){
       let newImageSrc = thumbnail.dataset.largeVersion;
-      let newImageTitle = thumbnail.dataset.title;
-      let newImageDescription = thumbnail.dataset.description;
       mainImage.setAttribute("src", newImageSrc);
-      mainImageTitle.textContent = newImageTitle;
-      mainImageDescription.textContent = newImageDescription;
+      mainImageTitle.textContent = thumbnail.dataset.title;
+      mainImageDescription.textContent = thumbnail.dataset.description;
+
+      let currentImageDiv = document.querySelector(".gallery-thumbs .current");
+      currentImageDiv.classList.remove("current");
+      thumbnail.parentNode.classList.add("current");
     });
   });
+
+
 }
 
 document.addEventListener("DOMContentLoaded", function() {
