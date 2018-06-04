@@ -1,3 +1,7 @@
+---
+
+---
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -340,7 +344,7 @@ h2 ~ p {
   width: 0;
 }
 .hero-home {
-  background-image: url(/images/shark.jpg);
+  background-image: url({{ site.baseurl }}/images/shark.jpg);
   background-position: center top;
 }
 .hero-content {
